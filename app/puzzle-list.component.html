@@ -1,0 +1,12 @@
+<h2>My puzzles</h2>
+<ul class="puzzles">
+  <li *ngFor="let puzzle of puzzles" (click)="onSelect(puzzle)">
+    <span class="puzzle">{{puzzle.id}}</span> {{puzzle.name}}
+  </li>
+</ul>
+<div *ngIf="selectedPuzzle">
+  <h2>
+    {{selectedPuzzle.name | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View details</button>
+</div>
